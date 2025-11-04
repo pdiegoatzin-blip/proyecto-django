@@ -20,8 +20,9 @@ from inicio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.principal,name="Principal"),
+    path('', views.principal, name="Principal"),
+    path('principal/', views.principal, name="Principal"),
     path('contacto/',views.contacto, name="Contacto"),
-    path('Registrar',views.registrar,name="Registrar"),
-    
+    path('registrar/',views.registrar,name="Registrar"),
+    path('ejemplo/',views.ejemplo,name="ejemplo")
 ]
