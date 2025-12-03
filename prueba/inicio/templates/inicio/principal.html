@@ -11,13 +11,39 @@
     Principal<span>DSM</span>
 {%endblock%}
 {%block encabezado%}
-	<!--Encabezdo -->
-	<h3>Alumnos
-	<small>Lista de Alumnos </small></h3>
-	<!-- /Encabezado-->
-{%endblock%}
+			<!--Encabezdo -->
+			<!-- cambio de prueba para git -->
+
+
+
+					<h3>Alumnos
+				    <small>Lista de Alumnos </small></h3>
+			<!-- /Encabezado-->
+			 {%endblock%}
 {% block contenido%}
+<!--Tabla de alumnos -->
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Foto</th>
+			<th>Matricula</th>
+			<th>Nombre</th>
+			<th>Carrera</th>
+			<th>Turno</th>
 
-
-			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="text-center">
+				<img src="" alt="" class="img-media">
+			</td>
+			<td class="text-semibold">UTM232001TI</td>
+			<td class="muted">Pablo</td>
+			<td class="muted">TI</td>
+			<td class="muted">Matutino</td>
+		</tr>
+	</tbody>
+	</table>
+	<!--/Tabla de alumnos-->
 {%endblock%}

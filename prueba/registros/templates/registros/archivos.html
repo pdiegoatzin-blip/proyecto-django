@@ -1,0 +1,56 @@
+{% extends "inicio/encabezado.html" %}
+
+{% block titulo %} CARGAR ARCHIVOS {% endblock %}
+{%block imagen%}
+    {%load static%}
+    {%static 'inicio/imagenes/contacto.jpeg'%}
+{%endblock%}
+{%block info%}
+    Contacto<span>contactanos</span>
+{%endblock%}
+{%block encabezado%}
+			<!--Encabezdo -->
+					<h3>Envia tu documento
+                    <small>...</small></h3>
+			<!-- /Encabezado-->
+			 {%endblock%}
+{% block contenido%}
+			
+
+			<!-- Formulario -->
+<form class="form-horizontal" action="{% url 'Subir'%}" method="POST" role="form" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <!-- Campo Usuario -->
+            <div class="form-group">
+                <label class="col-sm-2 control-label text-right">Titulo:</label>
+                <div class="col-sm-10">
+                    <input name="titulo" type="text" class="form-control">
+                </div>
+            </div>
+
+            <!-- Campo Mensaje -->
+            <div class="form-group">
+                <label class="col-sm-2 control-label text-right">Descripcion:</label>
+                <div class="col-sm-10">
+                    <textarea name="descripcion" cols="50" rows="10" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label text-right">Archivo:</label>
+                <div class="col-sm-10">
+                    <input type="file" name="archivo" />
+                </div>
+            </div>
+
+            <!-- Botón de envío -->
+            <div class="form-actions text-right">
+                <input type="submit" value="Enviar" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Fin del Formulario -->
+		
+{%endblock%}

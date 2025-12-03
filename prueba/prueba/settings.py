@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5alct3to$(4&7n=wu-gq@&n$4^xa6=2y5*d45zl5_1fb9zo+q%'
+SECRET_KEY = 'django-insecure-ftmlkwl*##mua!xuev#ug_fe($^1s+vfhqigdsjaz2$!!@cc9&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'inicio',
     'registros.apps.RegistrosConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,32 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Archivos fotograficos 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+#CKEDITOR
+CKEDITOR_CONFIGS ={
+    'default':{'toolbar': 'Custom',
+        'toolbar_Custom':[
+            ['Bold','Italic','Underline'],
+            ['NumberendList','BulletedList']
+        ]
+    }
+}
+
+
+
+# DATABASES = {
+#     'default': {
+#     'ENGINE': 'django.db.backends.mysql',
+#     'NAME': 'ejemplo',
+#     'USER': 'root',
+#     'PASSWORD':'123456xd',
+#     'HOST': 'localhost',
+#     'PORT': '3306',
+#     }
+# }
